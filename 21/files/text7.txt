@@ -1,0 +1,4 @@
+Beautiful is 123 than ugly.
+Explicit is 123 than implicit.
+Simple is 123 than complex.
+Complex is 123 than complicated.
