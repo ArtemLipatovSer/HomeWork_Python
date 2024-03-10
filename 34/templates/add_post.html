@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    {{ super() }}
+
+{% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{cat}}">{{msg}}</div>
+{% endfor %}
+
+<form action="{{url_for('addPost')}}" method="post">
+    <div class="input-group mb-3">
+        <input type="text" name="title" class="form-control" placeholder="Заголовок" aria-label="Заголовок" aria-describedby="basic-addon1">
+    </div>
+
+    <div class="input-group mb-3">
+    <input type="text" name='author' class="form-control" placeholder="Автор" aria-label="Автор" aria-describedby="basic-addon2">
+    </div>
+
+    <div class="input-group mb-3">
+        <input type="text" name='url' class="form-control" placeholder="URL" aria-label="URL" aria-describedby="basic-addon2">
+    </div>
+
+    <div class="input-group">
+        <span class="input-group-text">Статья</span>
+        <textarea name='textPost' class="form-control" aria-label="Статья"></textarea>
+    </div>
+    <input class="btnSub" type="submit" value="Отправить">
+
+</form>
+
+{% endblock %}
+
