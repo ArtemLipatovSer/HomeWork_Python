@@ -271,6 +271,11 @@ input[type="file"] {
   margin: 20px 0 0 20px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.titleImg {
+  display: flex;
 }
 
 .hand {
@@ -290,9 +295,21 @@ input[type="file"] {
     width: 200px;
   }
 }
-@media screen and (max-height: 400px) {
+
+@media screen and (max-height: 600px) {
   .hand-img {
     width: 170px;
+  }
+}
+@media screen and (max-height: 400px) {
+  .hand-img {
+    width: 130px;
+  }
+}
+@media screen and (max-height: 300px) {
+  .hand-img {
+    position: relative;
+    float: right;
   }
 }
 
@@ -313,20 +330,92 @@ input[type="file"] {
   body {
     background-color: red;
   }
-} 
-
-.flash{
-    padding: 10px;
-    border-radius: 10px;
 }
 
-.flash.success{
-    border: 1px solid #21DBB56;
-    background: #AEFFC5;
+.flash {
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.flash.error{
-    border: 1px solid #FF4343;
-    background: #FF9C9C;
+.flash.success {
+  border: 1px solid #21DBB5;
+  background: #aeffc5;
 }
 
+.flash.error {
+  border: 1px solid #ff4343;
+  background: #ff9c9c;
+}
+
+.personal-image {
+  text-align: center;
+}
+.personal-image input[type="file"] {
+  display: none;
+}
+.personal-figure {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+.personal-avatar {
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  box-sizing: border-box;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  transition: all ease-in-out 0.3s;
+}
+.personal-avatar-profile {
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  box-sizing: border-box;
+  border-radius: 100%;
+  border: 2px solid transparent;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+  transition: all ease-in-out 0.3s;
+  margin-bottom: 10px;
+}
+
+.personal-avatar:hover {
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+.personal-figcaption {
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  width: inherit;
+  height: inherit;
+  border-radius: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: all ease-in-out 0.3s;
+}
+.personal-figcaption:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.personal-figcaption > img {
+  margin-top: 32.5px;
+  width: 50px;
+  height: 50px;
+}
+
+.authBtn {
+  text-align: center;
+}
+
+.authBtn a {
+  margin-right: 10px;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.btnProfile {
+  display: flex;
+  justify-content: end;
+  margin: 20px;
+}

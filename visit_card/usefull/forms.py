@@ -1,9 +1,7 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, validators, TextAreaField
-from wtforms.validators import DataRequired, Length, Email, EqualTo, URL
-from wtforms.widgets import TextArea
-
-from alch.usefull.DataBase import Register
+from wtforms import StringField, PasswordField, SubmitField, validators, TextAreaField
+from wtforms.validators import DataRequired, Length, EqualTo, Email
+from visit_card.usefull.DataBase import Register
 
 
 class UniqueUsernameValidator:
@@ -41,8 +39,7 @@ class ProfileForm(FlaskForm):
     spec = StringField('Специальность', validators=[DataRequired()])
     aboutMe = TextAreaField('О себе', validators=[Length(max=500, message='Максимум 500 символов')])
     numberPhone = StringField('Номер телефона')
-    vkontakte = StringField('Вконтакте', validators=[URL()])
+    vkontakte = StringField('Вконтакте')
     email = StringField('Эл. почта: ', validators=[Email('Некорректный email')])
-    telegram = StringField('Телеграмм', validators=[URL()])
-    instagram = StringField('Инстаграм', validators=[URL()])
+    telegram = StringField('Телеграмм')
     submit = SubmitField('Отправить')

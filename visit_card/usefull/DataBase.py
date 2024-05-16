@@ -1,7 +1,9 @@
-from alch.exe import db
+from flask_login import UserMixin
+
+from visit_card.db import db
 
 
-class Register(db.Model):
+class Register(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     login = db.Column(db.String(50), unique=True)
     email = db.Column(db.String(50), unique=True)
@@ -9,6 +11,7 @@ class Register(db.Model):
 
     def __repr__(self):
         return f'<profiles {self.login}>'
+
 
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -26,5 +29,3 @@ class Users(db.Model):
 
     def __repr__(self):
         return f'<profiles {self.id}>'
-
-
