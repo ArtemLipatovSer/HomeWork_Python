@@ -55,8 +55,10 @@ def logout():
 
 @admin.route('/delete')
 def delete():
+    name = current_user.login
     p = Register.query.filter_by(id=current_user.id).first()
     db.session.delete(p)
     db.session.commit()
     logout_user()
+    os.remove(f'admin\static\img\{name}.jpg')
     return redirect(url_for('index'))
