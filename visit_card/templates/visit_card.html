@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <section style="margin: 10px; border-radius: 10px">
+        <div class="box1 box">
+          <div class="content">
+            <div class="image">
+              {% if img %}
+                <img src="admin/static/img/{{ username }}.jpg" alt="">
+              {% else %}
+                <img src="https://i.postimg.cc/bryMmCQB/profile-image.jpg" alt="Profile Image">
+              {% endif %}
+            </div>
+            <div class="text">
+              <p class="name">{{ info.firstname }} {{ info.lastname }}</p>
+              <p class="job_title">{{ info.specialty }}</p>
+              <p class="job_discription">{{ info.aboutMe }}</p>
+            </div>
+            <div class="icons">
+              <button>
+                <a href="https://vk.com/{{ info.vk }}" style="text-decoration: none; color: white">
+                    <img src="static/img/vk.png" height="25px" alt="Description of the image">
+                </a>
+              </button>
+              <button>
+                <a href="https://telegram.me/{{ info.telegram }}" style="text-decoration: none; color: white">
+                    <img src="static/img/telegram.png" height="25px" alt="Description of the image">
+                </a>
+              </button>
+              <button>
+                <a href="mailto:{{ info.email }}" style="text-decoration: none; color: white">
+                    <img src="static/img/email.png" height="25px" alt="none img">
+                </a>
+              </button>
+            </div>
+            <div class="button">
+              <div>
+                <button class="connect" type="button">
+                  <a href="tel:{{ phone }}" style="text-decoration: none; color: white">Connect</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+{% endblock %}
